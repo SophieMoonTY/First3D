@@ -38,5 +38,24 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log(monsters[2]);
 
 
+        List<string> items = new List<string>();
+        items.Add("생명물약30");
+        items.Add("생명물약30");
+
+        items.RemoveAt(0);
+
+        Debug.Log("가지고 있는 아이템");
+        Debug.Log(items[0]);
+        Debug.Log(items[1]);
+
+        //3.연산자
+        int exp = 1500;
+
+        exp = 1500 + 320;
+        exp = exp - 10;
+        level = exp / 300;
+        strenght = level * 3.1f;
+
+        int nextExp = 300 - (exp % 300);
     }
 }
