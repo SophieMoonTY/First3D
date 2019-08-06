@@ -48,7 +48,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         Debug.Log("가지고 있는 아이템");
         Debug.Log(items[0]);
-        Debug.Log(items[1]);
+        // Debug.Log(items[1]);
 
         //3.연산자
         int exp = 1500;
@@ -56,8 +56,26 @@ public class NewBehaviourScript : MonoBehaviour
         exp = 1500 + 320;
         exp = exp - 10;
         level = exp / 300;
-        strenght = level * 3.1f;
+        // strengh = level * 3.1f;
+
+        Debug.Log("  exp " + exp + " level : " + level);
 
         int nextExp = 300 - (exp % 300);
+        Debug.Log("다음 레벨까지 남은 경험치는?");
+        Debug.Log(nextExp);
+
+        string title = "전설의";
+        Debug.Log("용사의 이름은?");
+        Debug.Log(title + " " + playerName);
+
+        int fullLevel = 99;
+        isFullLevel = level == fullLevel;
+        Debug.Log("용사는 만렙입니까?" + isFullLevel);
+
+        bool isEndTutorial = level > 10;
+        Debug.Log("튜토리얼이 끝난 용사입니까?" + isEndTutorial);
+        Debug.Log("  5 / 3 : " + (5.0 / 3));
+
     }
 }
+ 
