@@ -11,6 +11,8 @@ public class NewBehaviourScript : MonoBehaviour
 
         //1.변수
         int level = 5;
+        level = (int)(2.4);
+        Debug.Log(" 변환 후 level " + level);
         float strength = 15.5f;
         string playerName = "Gini";
         bool isFullLevel = false;
