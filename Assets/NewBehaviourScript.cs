@@ -76,6 +76,11 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log("튜토리얼이 끝난 용사입니까?" + isEndTutorial);
         Debug.Log("  5 / 3 : " + (5.0 / 3));
 
+        int health = 30;
+        int mana = 25;
+        bool isBadCondition = health <= 50 && mana <= 20;
+        Debug.Log("용사의 상태가 나쁩니까?" + isBadCondition);
+
     }
 }
  
