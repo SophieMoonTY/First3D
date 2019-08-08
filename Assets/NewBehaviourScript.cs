@@ -78,9 +78,25 @@ public class NewBehaviourScript : MonoBehaviour
 
         int health = 30;
         int mana = 25;
+        //bool isBadCondition = health <= 50 && mana <= 20;
         bool isBadCondition = health <= 50 && mana <= 20;
+
+        string condition = isBadCondition ? "나쁨" : "좋음";
         Debug.Log("용사의 상태가 나쁩니까?" + isBadCondition);
 
+        ///4.키워드
+        //int float = 1;
+        //string name = List;
+
+        //5.whrjsans
+        if (condition == "나쁨")
+        {
+            Debug.Log("플레이어의 상태가 나쁘니 아이템을 사용하세요. ");
+        }
+        else
+        {
+            Debug.Log("플레이어의 상태가 좋습니다. ");
+        }
     }
 }
  
