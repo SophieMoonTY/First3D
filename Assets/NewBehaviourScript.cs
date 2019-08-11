@@ -88,14 +88,33 @@ public class NewBehaviourScript : MonoBehaviour
         //int float = 1;
         //string name = List;
 
-        //5.whrjsans
-        if (condition == "나쁨")
-        {
+        //5.조건문
+        if (condition == "나쁨") {
             Debug.Log("플레이어의 상태가 나쁘니 아이템을 사용하세요. ");
         }
-        else
-        {
+        else {
             Debug.Log("플레이어의 상태가 좋습니다. ");
+        }
+        if (isBadCondition && items[0] == "생명물약30") {
+            items.RemoveAt(0);
+            health += 30;
+            Debug.Log("생명포션30을 사용하였습니다.");
+        }
+        else if (isBadCondition && items[0] == "마나물약30")  {
+            items.RemoveAt(0);
+            mana += 30;
+            Debug.Log("마나포션30을 사용하였습니다.");
+        }
+        switch (monsters[0]) {
+            case "슬라임":
+                Debug.Log("소형 몬스터가 출현");
+                break;
+            case "악마":
+                Debug.Log("중형 몬스터가 출현");
+                break;
+            case "골렘":
+                Debug.Log("대형 몬스터가 출현");
+                break;
         }
     }
 }
