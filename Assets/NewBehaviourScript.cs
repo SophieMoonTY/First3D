@@ -107,6 +107,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
         switch (monsters[0]) {
             case "슬라임":
+            case "사막뱀":
                 Debug.Log("소형 몬스터가 출현");
                 break;
             case "악마":
@@ -115,6 +116,30 @@ public class NewBehaviourScript : MonoBehaviour
             case "골렘":
                 Debug.Log("대형 몬스터가 출현");
                 break;
+            default:
+                Debug.Log("??? 몬스터가 출현!");
+                break;
+        }
+
+        //6.반복문
+        while (health > 0) {
+            health--;
+        if (health > 0)
+            Debug.Log("독 데미지를 입었습니다." + health); 
+        else
+            Debug.Log("사망하였습니다.");
+
+        if (health == 10) {
+                Debug.Log("해독제를 사용합니다.");
+                break;
+            }
+        }
+        for (int count=0; count<10; count++) {
+            health++;
+            Debug.Log("븡대로 치료중 ......." + health);
+        }
+        for (int index = 0; index < monsters.Length; index++) {
+            Debug.Log("이 지역에 있는 몬스터 : " + monsters[index]);
         }
     }
 }
