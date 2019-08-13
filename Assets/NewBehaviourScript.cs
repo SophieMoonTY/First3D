@@ -139,8 +139,19 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.Log("븡대로 치료중 ......." + health);
         }
         for (int index = 0; index < monsters.Length; index++) {
-            Debug.Log("이 지역에 있는 몬스터 : " + monsters[index]);
+            //Debug.Log("이 지역에 있는 몬스터 : " + monsters[index]);
         }
+        foreach (string monster in monsters)
+        {
+            Debug.Log("이 지역에 있는 몬스터 : " + monster);
+        }
+    }
+    //함수(메소드)
+    int Heal(int health)
+    {
+        health += 10;
+        Debug.Log("힘을 받았습니다." + health);
+        return health;
     }
 }
  
