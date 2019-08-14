@@ -5,6 +5,7 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    int health = 30;
     void Start()
     {
         Debug.Log("Hello");
@@ -145,13 +146,13 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Debug.Log("이 지역에 있는 몬스터 : " + monster);
         }
+        Heal();
     }
     //함수(메소드)
-    int Heal(int health)
+    void Heal()
     {
         health += 10;
         Debug.Log("힘을 받았습니다." + health);
-        return health;
     }
 }
  
