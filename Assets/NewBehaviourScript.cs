@@ -5,7 +5,15 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    string title = "전설의";
+    string playerName = "나검사";
+    float strength = 15.5f;
+    int exp = 1500;
     int health = 30;
+    int mana = 25;
+    int level = 5;
+    bool isFullLevel = false;
+
     void Start()
     {
         Debug.Log("Hello");
@@ -147,12 +155,28 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.Log("이 지역에 있는 몬스터 : " + monster);
         }
         Heal();
+
+        for (int idx = 0; idx < monsters.Length; idx++)
+        {
+            Debug.Log("용사는 " + monsters[idx] + " 에게 " + Battle(monsterLevel[idx]));
+        }
     }
     //함수(메소드)
     void Heal()
     {
         health += 10;
         Debug.Log("힘을 받았습니다." + health);
+    }
+    string Battle(int monsterLevel)
+    {
+        string result;
+        if (level >= monsterLevel)
+
+            result = "이겼습니다.";
+        else
+            result = "졌습니다";
+
+        return result;
     }
 }
  
