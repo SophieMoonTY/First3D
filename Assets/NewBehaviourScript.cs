@@ -28,7 +28,11 @@ public class NewBehaviourScript : MonoBehaviour
 
         Debug.Log(" 용사의 이름은 ?");
         Debug.Log(playerName);
+        playerName = "똥쟁이";
+        Debug.Log(" 용사의 이름은 again ?");
+        Debug.Log(playerName);
         Debug.Log(" 용사의 레벨은 ?");
+        
         Debug.Log(level);
         Debug.Log(" 용사의 힘은 ?");
         Debug.Log(strength);
@@ -173,7 +177,12 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         //8. 클래스
-        Actor player = new Actor();
+        player player = new player();
+        player.id = 0;
+        player.name = "나법사";
+        player.title = "나현명";
+        player.strength = 2.4f;
+        player.weapon = "나무지팡이";
         player.LevelUp();
         Debug.Log(player.name + "의 레벨은" + player.level + "입니다");
     }
