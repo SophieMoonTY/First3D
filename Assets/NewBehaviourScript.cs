@@ -48,10 +48,11 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log(monsterLevel[0]);
 
         Debug.Log("맵에 존재하는 몬스터");
+        Debug.Log("사막뱀의 레벨은?");
+        Debug.Log(monsterLevel[2]);
         Debug.Log(monsters[0]);
         Debug.Log(monsters[1]);
         Debug.Log(monsters[2]);
-
 
         List<string> items = new List<string>();
         items.Add("생명물약30");
