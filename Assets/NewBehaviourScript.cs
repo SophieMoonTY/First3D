@@ -178,14 +178,16 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         //8. 클래스
-        player player = new player();
+        Player player = new Player();
         player.id = 0;
         player.name = "나법사";
         player.title = "나현명";
         player.strength = 2.4f;
         player.weapon = "나무지팡이";
+
         player.LevelUp();
         Debug.Log(player.name + "의 레벨은" + player.level + "입니다");
+        Debug.Log(player.move());
     }
 
     void Heal()

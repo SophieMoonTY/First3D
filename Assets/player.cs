@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : Actor
+public class Player : Actor
 {
     public string move()
     {
