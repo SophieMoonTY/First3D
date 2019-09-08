@@ -28,7 +28,11 @@ public class NewBehaviourScript : MonoBehaviour
 
         Debug.Log(" 용사의 이름은 ?");
         Debug.Log(playerName);
+        playerName = "똥쟁이";
+        Debug.Log(" 용사의 이름은 again ?");
+        Debug.Log(playerName);
         Debug.Log(" 용사의 레벨은 ?");
+        
         Debug.Log(level);
         Debug.Log(" 용사의 힘은 ?");
         Debug.Log(strength);
@@ -44,10 +48,11 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log(monsterLevel[0]);
 
         Debug.Log("맵에 존재하는 몬스터");
+        Debug.Log("사막뱀의 레벨은?");
+        Debug.Log(monsterLevel[2]);
         Debug.Log(monsters[0]);
         Debug.Log(monsters[1]);
         Debug.Log(monsters[2]);
-
 
         List<string> items = new List<string>();
         items.Add("생명물약30");
@@ -98,23 +103,28 @@ public class NewBehaviourScript : MonoBehaviour
         //string name = List;
 
         //5.조건문
-        if (condition == "나쁨") {
+        if (condition == "나쁨")
+        {
             Debug.Log("플레이어의 상태가 나쁘니 아이템을 사용하세요. ");
         }
-        else {
+        else
+        {
             Debug.Log("플레이어의 상태가 좋습니다. ");
         }
-        if (isBadCondition && items[0] == "생명물약30") {
+        if (isBadCondition && items[0] == "생명물약30")
+        {
             items.RemoveAt(0);
             health += 30;
             Debug.Log("생명포션30을 사용하였습니다.");
         }
-        else if (isBadCondition && items[0] == "마나물약30")  {
+        else if (isBadCondition && items[0] == "마나물약30")
+        {
             items.RemoveAt(0);
             mana += 30;
             Debug.Log("마나포션30을 사용하였습니다.");
         }
-        switch (monsters[0]) {
+        switch (monsters[0])
+        {
             case "슬라임":
             case "사막뱀":
                 Debug.Log("소형 몬스터가 출현");
@@ -131,42 +141,61 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         //6.반복문
-        while (health > 0) {
+        while (health > 0)
+        {
             health--;
-        if (health > 0)
-            Debug.Log("독 데미지를 입었습니다." + health); 
-        else
-            Debug.Log("사망하였습니다.");
+            if (health > 0)
+                Debug.Log("독 데미지를 입었습니다." + health);
+            else
+                Debug.Log("사망하였습니다.");
 
-        if (health == 10) {
+            if (health == 10)
+            {
                 Debug.Log("해독제를 사용합니다.");
                 break;
             }
         }
-        for (int count=0; count<10; count++) {
+        for (int count = 0; count < 10; count++)
+        {
             health++;
             Debug.Log("븡대로 치료중 ......." + health);
         }
-        for (int index = 0; index < monsters.Length; index++) {
+        for (int index = 0; index < monsters.Length; index++)
+        {
             //Debug.Log("이 지역에 있는 몬스터 : " + monsters[index]);
         }
         foreach (string monster in monsters)
         {
             Debug.Log("이 지역에 있는 몬스터 : " + monster);
         }
+
+        //7.함수(메소드)
         Heal();
 
         for (int idx = 0; idx < monsters.Length; idx++)
         {
             Debug.Log("용사는 " + monsters[idx] + " 에게 " + Battle(monsterLevel[idx]));
         }
+
+        //8. 클래스
+        Player player = new Player();
+        player.id = 0;
+        player.name = "나법사";
+        player.title = "나현명";
+        player.strength = 2.4f;
+        player.weapon = "나무지팡이";
+
+        player.LevelUp();
+        Debug.Log(player.name + "의 레벨은" + player.level + "입니다");
+        Debug.Log(player.move());
     }
-    //함수(메소드)
+
     void Heal()
     {
         health += 10;
         Debug.Log("힘을 받았습니다." + health);
     }
+
     string Battle(int monsterLevel)
     {
         string result;
